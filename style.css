@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #efece9;
+  font-family: 'EB Garamond', Georgia, serif;
+  color: #2a1f29;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #5e3f5a;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: #3d2839;
+}
+
+.page-wrap {
+  min-height: 100vh;
+  padding: 0 clamp(18px, 4vw, 32px) 120px;
+}
+
+.content-col {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.notes-col {
+  padding-right: clamp(0px, 14%, 150px);
+}
+
+/* --- Header --- */
+
+.site-header {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 34px 0 30px;
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  font: 500 23px/1 'EB Garamond', serif;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  min-height: 23px;
+}
+
+.nav {
+  display: flex;
+  gap: 22px;
+  font: 500 13px/1 'Work Sans', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid transparent;
+}
+
+.nav-item[aria-current="page"] {
+  border-bottom-color: #2a1f29;
+}
+
+/* --- About page --- */
+
+.hero {
+  display: flex;
+  gap: 38px;
+  align-items: flex-end;
+  flex-wrap: wrap-reverse;
+  padding: 14px 0 0;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: min(320px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero h1 {
+  margin: 0;
+  font: 400 37px/1.2 'EB Garamond', serif;
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+
+.hero p {
+  margin: 0;
+  font: 400 19px/1.6 'EB Garamond', serif;
+  color: #463c45;
+  text-wrap: pretty;
+}
+
+.portrait-col {
+  width: 310px;
+  max-width: 100%;
+  flex: none;
+  margin-top: 34px;
+  margin-bottom: 26px;
+}
+
+.portrait {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: 53% 30%;
+  border: 1px solid #ddd6d2;
+}
+
+/* --- Contact row --- */
+
+.contact-row {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd6d2;
+}
+
+.contact-label {
+  font: 500 11px/1 'Work Sans', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8b8189;
+}
+
+.contact-link {
+  font: 400 17.5px/1.4 'EB Garamond', serif;
+}
+
+/* --- Selected work --- */
+
+.selected-section {
+  padding: 30px 0 0;
+  border-top: 1px solid #ddd6d2;
+}
+
+.selected-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.selected-header h2 {
+  margin: 0;
+  font: 400 26px/1.2 'EB Garamond', serif;
+}
+
+.all-writing-link {
+  cursor: pointer;
+  font: 500 12px/1 'Work Sans', sans-serif;
+  color: #5e3f5a;
+}
+
+.selected-list {
+  border-top: 1px solid #ddd6d2;
+}
+
+/* --- Citation row --- */
+
+.citation-row {
+  padding: 11px 0;
+}
+
+.citation-row p {
+  margin: 0;
+  font: 400 16.5px/1.45 'EB Garamond', serif;
+  text-wrap: pretty;
+}
+
+.citation-row .cite-meta {
+  color: #463c45;
+}
+
+.citation-row .cite-title-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #cfc6cc;
+}
+
+.citation-row .cite-title-link:hover {
+  color: #5e3f5a;
+  border-color: #5e3f5a;
+}
+
+.citation-row .cite-venue {
+  color: #463c45;
+  font-style: italic;
+}
+
+.citation-row .cite-tag {
+  font: 400 11px/1 'Work Sans', sans-serif;
+  color: #5e3f5a;
+  white-space: nowrap;
+  margin-left: 5px;
+}
+
+/* About uses bottom borders, Writing uses top borders */
+.selected-list .citation-row {
+  border-bottom: 1px solid #e2dbd7;
+}
+
+.writing-group .citation-row {
+  border-top: 1px solid #e2dbd7;
+}
+
+/* --- Field-building --- */
+
+.field-section {
+  padding: 46px 0 0;
+}
+
+.field-section h2 {
+  margin: 0 0 10px;
+  font: 400 26px/1.2 'EB Garamond', serif;
+}
+
+.field-intro {
+  margin: 0 0 14px;
+  font: 400 18.5px/1.58 'EB Garamond', serif;
+  color: #463c45;
+  text-wrap: pretty;
+}
+
+.field-list {
+  margin: 0;
+  padding: 0 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field-list li {
+  font: 400 17.5px/1.5 'EB Garamond', serif;
+  text-wrap: pretty;
+}
+
+.field-list .field-years {
+  color: #8b8189;
+}
+
+.field-list .field-link {
+  font: 500 11.5px/1 'Work Sans', sans-serif;
+  text-decoration: none;
+  border-bottom: 1px solid #cfc6cc;
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+
+/* --- Writing page --- */
+
+.writing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 14px 0 20px;
+}
+
+.writing-header h1 {
+  margin: 0;
+  font: 400 37px/1.14 'EB Garamond', serif;
+  letter-spacing: -0.015em;
+}
+
+.writing-count {
+  font: 400 12.5px/1 'Work Sans', sans-serif;
+  color: #8b8189;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 0 8px;
+  border-bottom: 1px solid #2a1f29;
+}
+
+.controls-label {
+  font: 400 12px/1 'Work Sans', sans-serif;
+  color: #8b8189;
+  margin-right: 2px;
+}
+
+.chip {
+  cursor: pointer;
+  font: 500 12.5px/1 'Work Sans', sans-serif;
+  padding: 7px 12px;
+  border: 1px solid #cfc6cc;
+  border-radius: 100px;
+  background: transparent;
+  color: #2a1f29;
+}
+
+.chip[aria-pressed="true"] {
+  background: #2a1f29;
+  color: #efece9;
+}
+
+.writing-group {
+  padding-top: 20px;
+}
+
+.writing-group + .writing-group {
+  padding-top: 38px;
+}
+
+.group-heading {
+  margin: 0 0 4px;
+  font: 500 22px/1.24 'EB Garamond', serif;
+  letter-spacing: -0.01em;
+}
+
+/* --- Notes page --- */
+
+#page-notes h1 {
+  margin: 0;
+  font: 400 37px/1.14 'EB Garamond', serif;
+  letter-spacing: -0.015em;
+  padding: 14px 0 14px;
+}
+
+.notes-opener {
+  margin: 0;
+  font: 400 19px/1.62 'EB Garamond', serif;
+  color: #463c45;
+  text-wrap: pretty;
+}
+
+.note-entry {
+  padding: 22px 0;
+  border-top: 1px solid #e2dbd7;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.note-date {
+  font: 400 11.5px/1 'Work Sans', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9a8f98;
+}
+
+.note-title {
+  margin: 0;
+  font: 400 26px/1.24 'EB Garamond', serif;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+
+.note-hook {
+  margin: 0;
+  font: 400 18.5px/1.58 'EB Garamond', serif;
+  color: #463c45;
+  text-wrap: pretty;
+}
+
+.note-action {
+  font: 500 12px/1 'Work Sans', sans-serif;
+  color: #5e3f5a;
+  text-decoration: none;
+  border-bottom: 1px solid #cfc6cc;
+  padding-bottom: 4px;
+  align-self: flex-start;
+  cursor: pointer;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* --- Note article --- */
+
+.note-back {
+  cursor: pointer;
+  font: 500 12px/1 'Work Sans', sans-serif;
+  color: #5e3f5a;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.note-article-date {
+  display: block;
+  margin: 26px 0 8px;
+  font: 400 11.5px/1 'Work Sans', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9a8f98;
+}
+
+.note-article h1 {
+  margin: 0;
+  font: 400 34px/1.2 'EB Garamond', serif;
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+  padding: 0;
+}
+
+.note-article-lede {
+  margin: 16px 0 0;
+  font: 400 20px/1.55 'EB Garamond', serif;
+  color: #2a1f29;
+  text-wrap: pretty;
+}
+
+.note-body {
+  margin: 30px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.note-body h2 {
+  margin: 14px 0 0;
+  font: 500 23px/1.3 'EB Garamond', serif;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+
+.note-body p {
+  margin: 0;
+  font: 400 18.5px/1.62 'EB Garamond', serif;
+  color: #463c45;
+  text-wrap: pretty;
+}
+
+.note-body ul {
+  margin: 0;
+  padding: 0 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.note-body li {
+  font: 400 18.5px/1.6 'EB Garamond', serif;
+  color: #463c45;
+  text-wrap: pretty;
+}
+
+.note-body li .li-label {
+  color: #2a1f29;
+}
+
+.note-body figure {
+  margin: 6px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.note-body .fig-placeholder {
+  aspect-ratio: 16/9;
+  border: 1px dashed #cfc6cc;
+  background: #f7f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 400 11px/1.4 'Work Sans', sans-serif;
+  color: #9a8f98;
+  text-align: center;
+  padding: 10px;
+}
+
+.note-body figcaption {
+  font: 400 14.5px/1.5 'Work Sans', sans-serif;
+  color: #8b8189;
+  text-wrap: pretty;
+}
+
+.note-footer {
+  margin: 34px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid #e2dbd7;
+  font: 400 15px/1.5 'Work Sans', sans-serif;
+  color: #8b8189;
+}
+
+/* --- Page visibility --- */
+
+.page { display: none; }
+.page.active { display: block; }

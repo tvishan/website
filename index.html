@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tvisha Nevatia</title>
+  <meta name="description" content="Violence prevention researcher — about, writing and notes.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-wrap">
+
+  <header class="site-header">
+    <div class="wordmark" id="wordmark" onclick="navigate('home')"></div>
+    <nav class="nav">
+      <span class="nav-item" data-page="home" onclick="navigate('home')">about</span>
+      <span class="nav-item" data-page="writing" onclick="navigate('writing')">writing &amp; talks</span>
+      <span class="nav-item" data-page="notes" onclick="navigate('notes')">notes</span>
+    </nav>
+  </header>
+
+  <!-- ====== ABOUT ====== -->
+  <main id="page-home" class="page">
+    <div class="content-col">
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Hi, I'm Tvisha! I research violence against women and children to help prevention programs work better.</h1>
+          <p>I currently work with the <a href="https://coalitionforgoodschools.org/" target="_blank" rel="noopener">Coalition for Good Schools</a> and <a href="https://raisingvoices.org/" target="_blank" rel="noopener">Raising Voices</a> as an independent consultant based in the UK. Before that, I led the Learning department at <a href="https://raisingvoices.org/" target="_blank" rel="noopener">Raising Voices</a> in Uganda. I've also supported randomised controlled trials evaluating programme impacts on violence and gender equality at <a href="https://poverty-action.org/uganda" target="_blank" rel="noopener">IPA Uganda</a> and <a href="https://www.povertyactionlab.org/j-pal-south-asia" target="_blank" rel="noopener">J-PAL South Asia</a>. Over the last decade, I have collaborated with NGOs and research institutions working on violence prevention globally.&nbsp;</p>
+          <p>I work with quantitative, qualitative and participatory methods, grounded in feminist practice, mostly alongside schools and communities in the Global South, at every stage of a prevention programme from design to scale.</p>
+          <div class="contact-row">
+            <span class="contact-label">Contact</span>
+            <a href="https://www.linkedin.com/in/tvisha-nevatia-0a491277/" class="contact-link">LinkedIn</a>
+            <a href="assets/Tvisha-Nevatia-CV-2026.pdf" class="contact-link">Download CV (PDF) &darr;</a>
+          </div>
+        </div>
+        <div class="portrait-col">
+          <img src="assets/p-sage.jpeg" alt="Tvisha Nevatia" class="portrait">
+        </div>
+      </section>
+
+      <section class="selected-section">
+        <div class="selected-header">
+          <h2>Selected work</h2>
+          <span class="all-writing-link" onclick="navigate('writing')">All writing &amp; talks &rarr;</span>
+        </div>
+        <div class="selected-list" id="selected-list"></div>
+      </section>
+
+      <section class="field-section">
+        <h2>Field-building</h2>
+        <p class="field-intro">Alongside research and programming, I contribute to field-building initiatives — including advising research priority setting exercises and speaking on knowledge generation processes.</p>
+        <ul class="field-list" id="field-list"></ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- ====== WRITING ====== -->
+  <main id="page-writing" class="page">
+    <div class="content-col">
+      <div class="writing-header">
+        <h1>Writing &amp; talks</h1>
+        <span class="writing-count" id="writing-total"></span>
+      </div>
+      <div class="controls">
+        <span class="controls-label">group by</span>
+        <button class="chip" data-sort="type" onclick="setGroupBy('type')">type</button>
+        <button class="chip" data-sort="theme" onclick="setGroupBy('theme')">theme</button>
+      </div>
+      <div id="writing-list"></div>
+    </div>
+  </main>
+
+  <!-- ====== NOTES ====== -->
+  <main id="page-notes" class="page">
+    <div class="content-col notes-col">
+      <div id="notes-list-view">
+        <h1>Notes</h1>
+        <p class="notes-opener">I'm a reflective person who enjoys thinking about things deeply, and I often write to make meaning of them. Here are some of those reflections.</p>
+        <section id="notes-list"></section>
+      </div>
+      <div id="note-article-view" style="display:none"></div>
+    </div>
+  </main>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
