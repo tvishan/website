@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>
+    // SPA redirect for GitHub Pages — preserves the path so the app can route it
+    sessionStorage.setItem("redirect", location.pathname + location.search + location.hash);
+    location.replace("/website/");
+  </script>
+</head>
+<body></body>
+</html>

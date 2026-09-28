@@ -228,7 +228,8 @@ function navigate(page) {
   wordmark.textContent = page === "home" ? "" : "Tvisha Nevatia";
 
   window.scrollTo({top: 0});
-  history.pushState(null, "", page === "home" ? "/" : "/" + page);
+  var base = document.querySelector("base")?.getAttribute("href") || "/";
+  history.pushState(null, "", page === "home" ? base : base + page);
 
   if (page === "notes") {
     document.getElementById("notes-list-view").style.display = "block";
@@ -244,7 +245,8 @@ function setGroupBy(sort) {
 }
 
 function pageFromPath(path) {
-  var clean = path.replace(/^\/|\/$/g, "");
+  var base = (document.querySelector("base")?.getAttribute("href") || "/").replace(/\/$/, "");
+  var clean = path.replace(new RegExp("^" + base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), "").replace(/^\/|\/$/g, "");
   if (clean === "writing") return "writing";
   if (clean === "notes") return "notes";
   return "home";
@@ -257,6 +259,12 @@ async function init() {
   notes = await notesRes.json();
 
   renderAbout();
+
+  var redirect = sessionStorage.getItem("redirect");
+  if (redirect) {
+    sessionStorage.removeItem("redirect");
+    history.replaceState(null, "", redirect);
+  }
   navigate(pageFromPath(window.location.pathname));
 
   window.addEventListener("popstate", function() {
