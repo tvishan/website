@@ -359,25 +359,12 @@ a:hover {
   gap: 9px;
 }
 
-.note-entry-row {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.note-thumb {
-  width: 100px;
-  height: 100px;
+.note-cover-banner {
+  width: 100%;
+  max-height: 220px;
   object-fit: cover;
   border-radius: 4px;
-  flex-shrink: 0;
-}
-
-.note-entry-text {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-width: 0;
+  margin: 8px 0 4px;
 }
 
 .note-date {

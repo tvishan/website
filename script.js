@@ -135,14 +135,8 @@ function renderNotesList() {
     var article = document.createElement("article");
     article.className = "note-entry";
     var html = "";
-    if (note.cover) {
-      html += '<div class="note-entry-row">';
-      html += '<img src="' + note.cover + '" alt="" class="note-thumb">';
-      html += '<div class="note-entry-text">';
-    }
     if (note.date) html += '<span class="note-date">' + note.date + '</span>';
     html += '<h2 class="note-title">' + note.title + '</h2>';
-    if (note.cover) html += '</div></div>';
     if (note.hook) html += '<p class="note-hook">' + note.hook + '</p>';
     if (note.body && note.body.length > 0) {
       html += '<button class="note-action" data-note="' + origIndex + '">Read &rarr;</button>';
@@ -170,6 +164,7 @@ function openNote(index) {
   var html = '<article class="note-article" style="padding:6px 0 0">';
   html += '<button class="note-back" onclick="closeNote()">&larr; All notes</button>';
   html += '<span class="note-article-date">' + note.date + '</span>';
+  if (note.cover) html += '<img src="' + note.cover + '" alt="" class="note-cover-banner">';
   html += '<h1>' + note.title + '</h1>';
   html += '<p class="note-article-lede">' + note.hook + '</p>';
   html += '<div class="note-body">';
