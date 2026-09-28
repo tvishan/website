@@ -135,6 +135,7 @@ function renderNotesList() {
     var article = document.createElement("article");
     article.className = "note-entry";
     var html = "";
+    if (note.cover) html += '<img src="' + note.cover + '" alt="" class="note-thumb">';
     if (note.date) html += '<span class="note-date">' + note.date + '</span>';
     html += '<h2 class="note-title">' + note.title + '</h2>';
     if (note.hook) html += '<p class="note-hook">' + note.hook + '</p>';
